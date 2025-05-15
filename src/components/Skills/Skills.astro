@@ -1,0 +1,79 @@
+---
+import styles from "./skills.module.scss";
+import SkillCard from "../SkillCard/SkillCard.astro";
+import { FaJava, FaReact, FaPython, FaGitAlt, FaSass } from "react-icons/fa";
+import { SiSpring, SiTailwindcss } from "react-icons/si";
+import { BiLogoTypescript, BiLogoJavascript } from "react-icons/bi";
+
+const frontend = [
+  { name: "React", img: FaReact },
+  { name: "TailwindCSS", img: SiTailwindcss },
+  { name: "SCSS/SASS", img: FaSass },
+];
+const backend = [{ name: "Spring", img: SiSpring }];
+const languages = [
+  { name: "Java", img: FaJava },
+  { name: "Python", img: FaPython },
+  { name: "Javascript", img: BiLogoJavascript },
+  { name: "Typescript", img: BiLogoTypescript },
+];
+const tools = [{ name: "Git", img: FaGitAlt }];
+---
+
+<section class=`stack ${styles.container}`>
+  <h2 class={styles.title}>Skills</h2>
+  <div class=`stack ${styles.box}`>
+    <div>
+      <h3>Frontend:</h3>
+      <span
+        >{
+          frontend.map((skill) => (
+            <SkillCard
+              name={skill.name}
+              img={skill.img}
+            />
+          ))
+        }</span
+      >
+    </div>
+    <div>
+      <h3>Backend:</h3>
+      <span
+        >{
+          backend.map((skill) => (
+            <SkillCard
+              name={skill.name}
+              img={skill.img}
+            />
+          ))
+        }</span
+      >
+    </div>
+    <div>
+      <h3>Languages:</h3>
+      <span
+        >{
+          languages.map((skill) => (
+            <SkillCard
+              name={skill.name}
+              img={skill.img}
+            />
+          ))
+        }</span
+      >
+    </div>
+    <div>
+      <h3>Tools:</h3>
+      <span
+        >{
+          tools.map((skill) => (
+            <SkillCard
+              name={skill.name}
+              img={skill.img}
+            />
+          ))
+        }</span
+      >
+    </div>
+  </div>
+</section>

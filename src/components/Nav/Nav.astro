@@ -1,0 +1,90 @@
+---
+import styles from "./nav.module.scss";
+import ThemeToggle from "../ThemeToggle/ThemeToggle.astro";
+import { IoIosMenu } from "react-icons/io";
+
+const data: { name: string; href: string }[] = [
+  { name: "About", href: "/" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
+];
+
+const isCurrentPage = (href: string) => {
+  let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+  if (pathname.at(0) !== "/") {
+    pathname = "/" + pathname;
+  }
+  if (pathname.at(-1) !== "/") {
+    pathname += "/";
+  }
+  return pathname === href || (href !== "/" && pathname.startsWith(href));
+};
+---
+
+<nav>
+  <div class={styles.menuHeader}>
+    <!-- Header: redirects to index -->
+    <a
+      href="/"
+      class={styles.headerLogo}
+      >Lennon Leung</a
+    >
+    <!-- Navigation for larger viewports -->
+    <ul class={styles.navItems}>
+      {
+        data.map((data) => (
+          <li>
+            <a
+              href={data.href}
+              aria-current={isCurrentPage(data.href) ? "page" : null}
+            >
+              {data.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div>
+      <ThemeToggle />
+      <button class={styles.menuButton}><IoIosMenu /></button>
+    </div>
+  </div>
+  <!-- Navigation for mobile viewports -->
+  <div
+    class={styles.mobileMenu}
+    aria-expanded="false"
+  >
+    <ul class={styles.menuItems}>
+      {
+        data.map((data) => (
+          <li>
+            <a
+              href={data.href}
+              aria-current={isCurrentPage(data.href) ? "page" : null}
+            >
+              {data.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<script>
+  import styles from "./nav.module.scss";
+
+  const menuButton = document.querySelector(`.${styles.menuButton}`);
+  const mobileMenu = document.querySelector(`.${styles.mobileMenu}`);
+
+  function expandMenu() {
+    if (mobileMenu?.getAttribute("aria-expanded") === "false") {
+      menuButton?.setAttribute("aria-expanded", "true");
+      mobileMenu?.setAttribute("aria-expanded", "true");
+    } else {
+      menuButton?.setAttribute("aria-expanded", "false");
+      mobileMenu?.setAttribute("aria-expanded", "false");
+    }
+  }
+  menuButton?.addEventListener("click", expandMenu);
+</script>

@@ -1,0 +1,22 @@
+.container {
+  align-items: center;
+
+  .title {
+    text-align: left;
+    width: 100%;
+  }
+
+  .box {
+    border: 1px solid white;
+    border-radius: 1rem;
+    background-color: var(--gray-900);
+    padding: 1rem;
+    width: 100%;
+
+    span {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+}

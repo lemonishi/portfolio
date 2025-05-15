@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: var(--gray-999);
+  padding-inline: 1rem;
+  width: fit-content;
+
+  :global(svg) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

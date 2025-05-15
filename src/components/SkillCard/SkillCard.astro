@@ -1,0 +1,6 @@
+---
+import styles from "./skillcard.module.scss";
+const { name, img: Icon } = Astro.props;
+---
+
+<div class={styles.card}><Icon /><p>{name}</p></div>

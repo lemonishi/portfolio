@@ -1,0 +1,37 @@
+---
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
+import styles from "./themetoggle.module.scss";
+---
+
+<button class={styles.themeButton}>
+  <span>
+    <MdOutlineLightMode />
+  </span>
+  <span>
+    <MdOutlineDarkMode />
+  </span>
+</button>
+
+<script>
+  import styles from "./themetoggle.module.scss";
+
+  const themeButton = document.querySelector(`.${styles.themeButton}`);
+
+  const applyTheme = (theme: string) => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark-theme");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
+  const toggleTheme = () => {
+    const isDark = localStorage.getItem("theme") === "dark";
+    applyTheme(isDark ? "light" : "dark");
+    console.log(isDark);
+  };
+
+  themeButton?.addEventListener("click", toggleTheme);
+</script>

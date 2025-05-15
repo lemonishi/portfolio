@@ -30,7 +30,6 @@ import styles from "./themetoggle.module.scss";
   const toggleTheme = () => {
     const isDark = localStorage.getItem("theme") === "dark";
     applyTheme(isDark ? "light" : "dark");
-    console.log(isDark);
   };
 
   themeButton?.addEventListener("click", toggleTheme);

@@ -44,3 +44,13 @@ const { title = "Lennon Leung", description = "Portfolio Site" } = Astro.props;
     rel="stylesheet"
   />
 </head>
+
+<script is:inline>
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored ? stored : (prefersDark ? "dark" : "light");
+
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark-theme");
+  }
+</script>

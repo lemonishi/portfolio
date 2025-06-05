@@ -1,26 +1,15 @@
 ---
 import Nav from "../components/Nav/Nav.astro";
 import Head from "../components/Head/Head.astro";
-import Particles from "../components/Particles/Particles.tsx";
+import Footer from "../components/Footer/Footer.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <Head />
   <body>
-    <Particles
-      particleColors={["#ffffff", "#ffffff"]}
-      particleCount={500}
-      particleSpread={20}
-      speed={0.3}
-      particleBaseSize={100}
-      sizeRandomness={0.3}
-      moveParticlesOnHover={false}
-      alphaParticles={false}
-      disableRotation={true}
-      client:load
-    />
     <Nav />
-    <div class="wrapper stack gap-2"><slot /></div>
+    <div class="stack"><slot /></div>
+    <Footer />
   </body>
 </html>

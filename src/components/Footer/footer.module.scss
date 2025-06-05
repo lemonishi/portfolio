@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 10rem;
+  margin-top: 2.5rem;
+
+  :global(svg) {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .socials {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        scale: 1.2;
+      }
+    }
+  }
+
+  p {
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+  }
+}

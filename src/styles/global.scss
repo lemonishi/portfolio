@@ -12,7 +12,17 @@
   --gray-900: #f3f4f7;
   --gray-999: #ffffff;
 
-  --link-color: var(--accent-regular);
+  --primary-light: #b795fc;
+  --primary-regular: #6f2af8;
+  --primary-dark: #38157c;
+
+  --secondary-light: #d4c2f7;
+  --secondary-regular: #a884ee;
+  --secondary-dark: #544277;
+
+  --accent-light: #f0b0c6;
+  --accent-regular: #e1618d;
+  --accent-dark: #713147;
 
   --shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01),
     0px 4px 2px rgba(9, 11, 17, 0.01), 0px 2px 2px rgba(9, 11, 17, 0.02),
@@ -29,6 +39,7 @@
   --font-body: "Public Sans", var(--font-system);
   --font-brand: Rubik, var(--font-system);
 
+  /* Font Sizes */
   --text-xs: 0.625rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -40,6 +51,12 @@
   --text-4xl: 3.125rem;
   --text-5xl: 3.625rem;
   --text-6xl: 4.5rem;
+
+  --theme-transition: 0.2s ease-in-out;
+  --delay-1: 0.2s;
+  --delay-2: 0.4s;
+  --delay-3: 0.6s;
+  --delay-4: 0.8s;
 }
 
 :root.dark-theme {
@@ -55,6 +72,18 @@
   --gray-800: #283044;
   --gray-900: #141925;
   --gray-999: #090b11;
+
+  --primary-light: #26046b;
+  --primary-regular: #4b07d5;
+  --primary-dark: #a583ea;
+
+  --secondary-light: #1a093d;
+  --secondary-regular: #331179;
+  --secondary-dark: #9988bc;
+
+  --accent-light: #500f26;
+  --accent-regular: #9f1e4b;
+  --accent-dark: #cf8fa5;
 
   --shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01),
     0px 4px 2px rgba(255, 255, 255, 0.01), 0px 2px 2px rgba(255, 255, 255, 0.02),
@@ -88,9 +117,10 @@ a {
 body {
   @include base;
   background-color: var(--gray-999);
-  color: var(--gray-200);
+  color: var(--gray-0);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  transition: var(--theme-transition);
   margin: 0;
   padding: 0;
 }
@@ -165,8 +195,4 @@ p {
 .stack {
   display: flex;
   flex-direction: column;
-}
-
-.gap-2 {
-  gap: 2rem;
 }

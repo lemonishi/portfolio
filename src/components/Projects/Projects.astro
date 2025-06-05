@@ -1,0 +1,17 @@
+---
+import styles from "./projects.module.scss";
+import ProjectCard from "../ProjectCard/ProjectCard.astro";
+
+const orbital = ["React", "Spring Boot", "MySQL"];
+const cs2103 = ["React", "TailwindCSS"];
+const projects = [
+  { src: "", title: "AtteNUS", description: "", tags: orbital },
+];
+---
+
+<section class="wrapper">
+  <h2 class={styles.title}>Projects</h2>
+  <div class={styles.container}>
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </div>
+</section>

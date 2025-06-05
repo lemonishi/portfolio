@@ -4,12 +4,8 @@ import styles from "./themetoggle.module.scss";
 ---
 
 <button class={styles.themeButton}>
-  <span>
-    <MdOutlineLightMode />
-  </span>
-  <span>
-    <MdOutlineDarkMode />
-  </span>
+  <span class={styles.light}><MdOutlineLightMode /></span>
+  <span class={styles.dark}><MdOutlineDarkMode /></span>
 </button>
 
 <script>

@@ -1,0 +1,16 @@
+---
+import styles from "./projectcard.module.scss";
+const { src, title, description, tags } = Astro.props;
+---
+
+<div class={styles.card}>
+  <img
+    src={src}
+    alt="Orbital Image"
+  />
+  <h4>{title}</h4>
+  <p>{description}</p>
+  <div class={styles.techStack}>
+    {tags.map((t: string) => <span class={styles.tag}>{t}</span>)}
+  </div>
+</div>

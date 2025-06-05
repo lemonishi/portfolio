@@ -1,7 +1,26 @@
-.title {
-  text-align: center;
-}
+@use "../../styles/_mixin.scss" as *;
 
-.subtitle {
-  text-align: center;
+.container {
+  padding-top: 10rem;
+  .title {
+    text-align: center;
+    @include slide-animation();
+  }
+
+  .subtitle {
+    text-align: center;
+    font-weight: 100;
+    background: linear-gradient(
+      150deg,
+      var(--primary-dark),
+      var(--accent-regular)
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include slide-animation(var(--delay-1));
+  }
+
+  .description {
+    @include slide-animation(var(--delay-2));
+  }
 }

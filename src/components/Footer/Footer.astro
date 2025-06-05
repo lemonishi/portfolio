@@ -1,0 +1,14 @@
+---
+import type { IconType } from "react-icons/lib";
+import styles from "./footer.module.scss";
+import { FaInstagram, FaGithub, FaTelegram } from "react-icons/fa";
+---
+
+<footer class={styles.container}>
+  <div class={styles.socials}>
+    <a href="https://www.instagram.com/lemonishi/?hl=en"><FaInstagram /></a>
+    <a href="https://github.com/lemonishi"><FaGithub /></a>
+    <FaTelegram />
+  </div>
+  <p>© Lennon Leung 2025</p>
+</footer>

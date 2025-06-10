@@ -1,13 +1,30 @@
 ---
 import styles from "./hero.module.scss";
+import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 ---
 
 <div class=`wrapper stack ${styles.container}`>
+  <img
+    src="/memoji.jpg"
+    alt=""
+  />
   <h1 class={styles.title}>Lennon Leung.</h1>
   <h4 class={styles.subtitle}>Frontend Developer, based in Singapore.</h4>
-  <p class={styles.description}>
-    After creating my first small scale web application, I became interested in
-    frontend development and started exploring various frontend frameworks and
-    projects.
-  </p>
+  <span class={styles.socials}>
+    <a href="https://www.instagram.com/lemonishi/?hl=en"><FaInstagram /></a>
+    <a href="https://github.com/lemonishi"><FaGithub /></a>
+    <a href="https://www.linkedin.com/in/lennon-leung-08aa1a36a/">
+      <FaLinkedin />
+    </a>
+  </span>
+  <div class={styles.scrollContainer}>
+    <a
+      href="#skill"
+      class={styles.scrollWrapper}
+    >
+      <span>Scroll Down</span>
+      <span class={styles.scrollSpan}><span class={styles.wheel}></span></span
+      ></a
+    >
+  </div>
 </div>

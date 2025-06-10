@@ -2,6 +2,15 @@
 
 .container {
   padding-top: 10rem;
+  height: 100vh;
+  align-items: center;
+
+  img {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 100%;
+  }
+
   .title {
     text-align: center;
     @include slide-animation();
@@ -10,17 +19,74 @@
   .subtitle {
     text-align: center;
     font-weight: 100;
-    background: linear-gradient(
-      150deg,
-      var(--primary-dark),
-      var(--accent-regular)
-    );
+    background: linear-gradient(150deg, var(--primary-600), var(--accent-500));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     @include slide-animation(var(--delay-1));
   }
 
-  .description {
+  .socials {
+    display: flex;
+    gap: 1rem;
+    transition: var(--theme-transition);
     @include slide-animation(var(--delay-2));
+
+    a {
+      transition: 0.2s ease-in-out;
+      &:hover {
+        scale: 1.2;
+      }
+
+      & > * {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  .scrollContainer {
+    position: absolute;
+    left: 0;
+    bottom: 5rem;
+    width: 100vw;
+    @include slide-animation(var(--delay-3));
+
+    .scrollWrapper {
+      display: block;
+      margin: auto;
+      text-align: center;
+
+      .scrollSpan {
+        display: block;
+        border-radius: 1rem;
+        border: 2px solid var(--gray-100);
+        width: 20px;
+        height: 25px;
+        margin: 0.5rem auto 0;
+        text-align: center;
+
+        .wheel {
+          background: var(--gray-100);
+          border-radius: 100%;
+          display: block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-55%);
+          height: 4px;
+          width: 4px;
+          animation: moveUpDown 2s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    bottom: 15%;
+  }
+  50% {
+    bottom: 30%;
   }
 }

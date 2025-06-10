@@ -1,12 +1,17 @@
 @use "../../styles/_mixin.scss" as *;
 
+@mixin shadow($color) {
+  box-shadow: 0 0 20px 0 #{$color};
+}
+
 section {
   --gray: #e3e6ee;
 
+  padding-top: 10rem;
   margin-bottom: 2rem;
 
   .title {
-    text-align: center;
+    text-align: left;
     width: 100%;
     @include slide-animation(var(--delay-3));
   }
@@ -31,7 +36,7 @@ section {
     }
 
     & > * {
-      padding: 1rem;
+      padding: 1rem 2rem;
       border-radius: 1rem;
       grid-area: auto;
       width: 100%;
@@ -39,46 +44,34 @@ section {
     }
 
     .frontend {
-      background: var(--primary-regular);
+      background: var(--primary-300);
+      @include shadow(var(--primary-300));
       @media (min-width: 50em) {
         grid-area: 1 / 1 / 1 / 4;
-      }
-
-      h3 {
-        color: var(--gray);
       }
     }
 
     .backend {
-      background: var(--primary-regular);
+      background: var(--secondary-400);
+      @include shadow(var(--secondary-400));
       @media (min-width: 50em) {
         grid-area: 1 / 4 / 1 / 6;
-      }
-
-      h3 {
-        color: var(--gray);
       }
     }
 
     .languages {
-      background: var(--primary-regular);
+      background: var(--accent-300);
+      @include shadow(var(--accent-300));
       @media (min-width: 50em) {
         grid-area: 2 / 1 / 2 / 5;
-      }
-
-      h3 {
-        color: var(--gray);
       }
     }
 
     .tools {
-      background: var(--primary-regular);
+      background: var(--primary-200);
+      @include shadow(var(--primary-200));
       @media (min-width: 50em) {
         grid-area: 2 / 5 / 2 / 6;
-      }
-
-      h3 {
-        color: var(--gray);
       }
     }
   }

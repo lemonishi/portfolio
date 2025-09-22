@@ -2,10 +2,17 @@
 import styles from "./projects.module.scss";
 import ProjectCard from "../ProjectCard/ProjectCard.astro";
 
-const orbital = ["React", "Spring Boot", "MySQL"];
+const orbital = ["React", "Spring Boot", "PostgreSQL", "Docker"];
 const cs2103 = ["React", "TailwindCSS"];
 const projects = [
-  { src: "", title: "AtteNUS", description: "", tags: orbital },
+  {
+    src: "https://github.com/lemonishi/attenus",
+    img: "../../assets/attenus.png",
+    title: "AtteNUS",
+    description:
+      "AtteNUS is a platform designed for students and teaching staff to make attendance taking simpler and less complicated.",
+    tags: orbital,
+  },
 ];
 ---
 

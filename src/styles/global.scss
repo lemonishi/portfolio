@@ -209,9 +209,12 @@ h4 {
   font-size: var(--text-xl);
 }
 
-h5,
-p {
+h5 {
   font-size: var(--text-lg);
+}
+
+p {
+  font-size: var(--text-base);
 }
 
 *,

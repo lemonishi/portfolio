@@ -156,8 +156,11 @@ html {
 
 a {
   text-decoration: none;
-
   &:visited {
+    color: var(--gray-200);
+  }
+
+  & > * {
     color: var(--gray-200);
   }
 }

@@ -29,16 +29,13 @@
     display: flex;
     gap: 1rem;
     transition: var(--theme-transition);
-    color: var(--gray-200);
     @include slide-animation(var(--delay-2));
 
     a {
       transition: 0.2s ease-in-out;
+      text-decoration: none;
       &:hover {
         scale: 1.2;
-      }
-      &:visited {
-        color: var(--gray-200);
       }
 
       & > * {
